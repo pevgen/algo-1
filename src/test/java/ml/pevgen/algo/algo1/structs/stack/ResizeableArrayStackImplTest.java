@@ -45,7 +45,7 @@ class ResizeableArrayStackImplTest {
     }
 
     @Test
-    void should_iterate_from_head_to_tail() {
+    void should_iterate_as_queue_fifo() {
         resizeableStack.push("item 1");
         resizeableStack.push("item 2");
         resizeableStack.push("item 3");

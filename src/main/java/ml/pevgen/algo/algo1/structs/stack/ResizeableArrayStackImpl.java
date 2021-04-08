@@ -53,6 +53,9 @@ public class ResizeableArrayStackImpl<T> implements ResizeableStack<T>, Iterable
     }
 
 
+    /**
+     * Iterate from the first element (index = 0) to the last element (FIFO)
+     */
     private class FromHeadToTailIterator implements Iterator<T> {
 
         private int iteratorIndex = 0;
