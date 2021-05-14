@@ -1,3 +1,4 @@
 # Project exclude paths
 /target/
 /algo-1.iml
+/.idea/
