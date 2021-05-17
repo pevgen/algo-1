@@ -1,5 +1,7 @@
 package ml.pevgen.algo.algo1.connectivity;
 
+import java.util.stream.IntStream;
+
 public interface Connectivity {
 
     /**
@@ -26,4 +28,16 @@ public interface Connectivity {
      * @param nodeId2 node 2
      */
     void union(int nodeId1, int nodeId2);
+
+    /**
+     * Init array with no connectivity values
+     * @param size - array size
+     * @return - no connectivity array of ints (array[i] = i)
+     */
+    default int[] initNoConnectivityArray(int size) {
+        return IntStream
+                .range(0, size)
+                .toArray();
+    }
+
 }

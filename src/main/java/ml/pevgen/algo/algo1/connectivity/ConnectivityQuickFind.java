@@ -1,8 +1,5 @@
 package ml.pevgen.algo.algo1.connectivity;
 
-import java.util.Random;
-import java.util.stream.IntStream;
-
 /**
  * Implement the simplest algorithm: nodes connected if id[p] is equal to id[q]
  */
@@ -11,11 +8,7 @@ public class ConnectivityQuickFind implements Connectivity {
     private final int[] id;
 
     public ConnectivityQuickFind(int size) {
-        // random connectivity
-        this.id = IntStream
-                .generate(() -> new Random().nextInt(size))
-                .limit(size)
-                .toArray();
+        id = initNoConnectivityArray(size);
     }
 
     @Override
