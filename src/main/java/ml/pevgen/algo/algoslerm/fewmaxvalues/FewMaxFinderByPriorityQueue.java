@@ -1,4 +1,4 @@
-package ml.pevgen.algo.algo1.fewmaxvalues;
+package ml.pevgen.algo.algoslerm.fewmaxvalues;
 
 import java.util.PriorityQueue;
 
