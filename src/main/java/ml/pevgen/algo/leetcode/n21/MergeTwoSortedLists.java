@@ -12,19 +12,58 @@ import static java.lang.System.out;
 public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
-        out.println(mergeTwoListsRecursively(null, null));
         out.println(mergeTwoListsRecursively(new ListNode(), null));
         out.println(mergeTwoListsRecursively(null, new ListNode()));
 
-        ListNode l3 = new ListNode(3);
-        ListNode l1 = new ListNode(1, l3);
+        out.println(mergeTwoLists(new ListNode(), null));
+        out.println(mergeTwoLists(null, new ListNode()));
 
-        ListNode l4 = new ListNode(4);
-        ListNode l2 = new ListNode(2, l4);
+        ListNode l1 = new ListNode(1, new ListNode(3));
+        ListNode l2 = new ListNode(2, new ListNode(4));
 
-        out.println(mergeTwoListsRecursively(l1, l2));
+        out.println(mergeTwoListsRecursively(l1, l2));  //  1-2-3-4
 
+        l1 = new ListNode(1, new ListNode(3));
+        l2 = new ListNode(2, new ListNode(6));
+
+        out.println(mergeTwoLists(l1, l2));  // 1-2-3-6
     }
+
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null) {
+            return list2;
+        }
+
+        if (list2 == null) {
+            return list1;
+        }
+
+        ListNode header = new ListNode(-1);
+
+        ListNode result = header;
+
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                result.next = list1;
+                list1 = list1.next;
+            } else {
+                result.next = list2;
+                list2 = list2.next;
+            }
+            result = result.next;
+        }
+
+        if (list1 == null) {
+            result.next = list2;
+        }
+
+        if (list2 == null) {
+            result.next = list1;
+        }
+
+        return header.next;
+    }
+
 
     public static ListNode mergeTwoListsRecursively(ListNode list1, ListNode list2) {
         if (list1 == null) {
