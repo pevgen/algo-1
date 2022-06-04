@@ -10,6 +10,8 @@ public class FewMaxFinderByPriorityQueue {
         for (int i : data) {
             priorityQueue.offer(i);
             if (priorityQueue.size() > maxCount) {
+                //  уменьшает сложность offer/poll с log(N) до log(maxCount)
+                // т.к. в очереди(дереве) остаются всегда только maxCount элементов
                 priorityQueue.poll();
             }
         }
