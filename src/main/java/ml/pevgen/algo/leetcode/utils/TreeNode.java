@@ -3,9 +3,10 @@ package ml.pevgen.algo.leetcode.utils;
 import ml.pevgen.algo.leetcode.n200.SameTree;
 
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    // they are public as leetcode tasks use direct access to the fields
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
 
     public int getVal() {
         return val;
