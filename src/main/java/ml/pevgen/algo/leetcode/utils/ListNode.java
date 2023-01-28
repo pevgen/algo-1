@@ -1,8 +1,12 @@
 package ml.pevgen.algo.leetcode.utils;
 
+
+/**
+ * Fields made public for simple using with leetcode examples
+ */
 public class ListNode {
-    private int val;
-    private ListNode next;
+    public int val;
+    public ListNode next;
 
     public ListNode() {
     }
