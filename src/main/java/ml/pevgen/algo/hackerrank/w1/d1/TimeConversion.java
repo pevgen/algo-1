@@ -1,4 +1,4 @@
-package ml.pevgen.algo.hackerrank;
+package ml.pevgen.algo.hackerrank.w1.d1;
 
 public class TimeConversion {
 
