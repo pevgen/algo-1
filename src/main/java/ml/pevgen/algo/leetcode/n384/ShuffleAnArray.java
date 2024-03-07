@@ -1,4 +1,4 @@
-package ml.pevgen.algo.n384;
+package ml.pevgen.algo.leetcode.n384;
 
 import java.util.Arrays;
 import java.util.HashSet;

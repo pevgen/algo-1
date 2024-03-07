@@ -1,5 +1,6 @@
 package ml.pevgen.algo.n384;
 
+import ml.pevgen.algo.leetcode.n384.ShuffleAnArray;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
