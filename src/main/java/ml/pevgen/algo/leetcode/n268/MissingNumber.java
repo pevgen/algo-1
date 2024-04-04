@@ -4,21 +4,47 @@ package ml.pevgen.algo.leetcode.n268;
 import java.util.Arrays;
 
 /**
- * <a href="https://leetcode.com/problems/missing-number/">https://leetcode.com/problems/missing-number/</a>
- *
- * O(1) extra space complexity (the same array)
- * O(n) runtime complexity (sort - O(N*logN); for - O(N); O(N*logN) < O(N) )
+ * <a href="https://leetcode.com/problems/missing-number/">
+ *     https://leetcode.com/problems/missing-number/</a>
+ * <p>
+ * O(1) space
+ * O(n) time
  *
  */
 public class MissingNumber {
 
-    public static void main(String[] args) {
-        System.out.println("result [2]: " + new MissingNumber().missingNumber(new int[]{0, 1}));
-        System.out.println("result [2]: " + new MissingNumber().missingNumber(new int[]{3, 0, 1}));
-        System.out.println("result [8]: " + new MissingNumber().missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1}));
+    // O(n) - time, O(1) - space
+    public int missingNumber(int[] nums) {
+        int sum = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        // sum, min, max of numbers
+        for (int num : nums) {
+            sum = sum + num;
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        // for missing max element
+        if (max < nums.length) {
+            return nums.length;
+        }
+
+        // the sum of all consecutive numbers
+        int allSum = 0;
+        for (int i = min; i <= max; i++){
+            allSum = allSum + i;
+        }
+
+        return allSum - sum;
     }
 
-    public int missingNumber(int[] nums) {
+    // O(1) - space, O(N*LogN) - time
+    public int missingNumber_ONlogN(int[] nums) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i) {
@@ -27,4 +53,5 @@ public class MissingNumber {
         }
         return nums.length;
     }
+
 }
